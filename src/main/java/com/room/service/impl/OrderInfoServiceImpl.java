@@ -17,11 +17,13 @@ import java.util.*;
 public class OrderInfoServiceImpl implements OrderInfoService {
     SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd");
-    SimpleDateFormat sdf3 = new SimpleDateFormat("yyyyMMddHHmmss");
+    SimpleDateFormat sdf3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     @Autowired
     OrderInfoMapper orderInfoMapper;
     @Autowired
     DeskInfoMapper deskInfoMapper;
+    @Autowired
+    SeatInfoMapper seatInfoMapper;
     @Autowired
     UserInfoMapper userInfoMapper;
     @Autowired
@@ -32,6 +34,9 @@ public class OrderInfoServiceImpl implements OrderInfoService {
     */
     @Override
     public String orderDesk(OrderInfo model, LoginModel login) {
+        if (model.getSeatId() == null) {
+            return "座位号为必填属性";
+        }
         if ((model.getOrderDate() == null) || model.getOrderDate().equals("")) {
             return "预约日期为必填属性";
         }
@@ -71,7 +76,10 @@ public class OrderInfoServiceImpl implements OrderInfoService {
         userInfoMapper.updateByPrimaryKeySelective(user);
         
         orderInfoMapper.insertSelective(model); //插入数据
-
+        Integer seatId = model.getSeatId();
+        SeatInfo seatInfo = seatInfoMapper.selectByPrimaryKey(seatId);
+        seatInfo.setDeskStatus(2);
+        seatInfoMapper.updateByPrimaryKey(seatInfo);
         return "";
     }
 
@@ -146,6 +154,13 @@ public class OrderInfoServiceImpl implements OrderInfoService {
 
             if (deskInfo != null) {
                 map.put("deskIdStr", deskInfo.getDeskNo());
+            }
+        }
+        if (model.getSeatId() != null) {
+            SeatInfo seatInfo = seatInfoMapper.selectByPrimaryKey(model.getSeatId()); //预约桌号为外接字段,需要关联桌子来解释该字段
+
+            if (seatInfo != null) {
+                map.put("seatIdStr", seatInfo.getSeatNo());
             }
         }
 

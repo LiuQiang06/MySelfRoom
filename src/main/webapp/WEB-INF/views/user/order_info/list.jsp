@@ -93,6 +93,7 @@
         <tr>
             <th>订单编号</th>
             <th>预约自习室号</th>
+            <th>预约座位号</th>
             <th>预约日期</th>
             <th>开始时间</th>
             <th>结束时间</th>
@@ -166,6 +167,8 @@
                     html += '<td>' + orderNoVal + '</td>';
                     var deskIdVal = setNullToEmpty(rows[i].deskIdStr);
                     html += '<td>' + deskIdVal + '</td>';
+                    var seatIdVal = setNullToEmpty(rows[i].seatIdStr);
+                    html += '<td>' + seatIdVal + '</td>';
                     var orderDateVal = setNullToEmpty(rows[i].orderInfo.orderDate);
                     html += '<td>' + orderDateVal + '</td>';
                     var startTimeVal = setNullToEmpty(rows[i].orderInfo.startTime);

@@ -6,7 +6,7 @@
 <head>
     <c:set var="uri" value="${pageContext.request.contextPath}"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>订单</title>
+    <title>自习室</title>
     <meta name="Copyright" content=""/>
     <link href="${pageContext.request.contextPath}/static/admin/css/public.css" rel="stylesheet" type="text/css">
     <link href="${pageContext.request.contextPath}/static/admin/css/modal_css.css" rel="stylesheet" type="text/css">
@@ -50,23 +50,23 @@
 <div id="imgModal"></div>
 
 <div class="mainBox" style="height:auto!important;height:550px;min-height:550px;">
-    <h3>订单</h3>
+    <h3>座位</h3>
     <div>
 
         <div style="display:inline">
             <p style="display:inline-block;margin-top:30px">
-                <span style="margin-left:20px;">订单编号</span>
-                <input type="text" class="inpMain" style="color:black;width:250px;" placeholder="请输入订单编号进行查询"
-                       id="orderNo"/>
+                <span style="margin-left:20px;">座位号</span>
+                <input type="text" class="inpMain" style="color:black;width:250px;"
+                       placeholder="请输入座位号进行查询" id="deskId"/>
             </p>
         </div>
 
         <div style="display:inline">
             <p style="display:inline-block;margin-top:30px">
-                <span style="margin-left:20px;">预约状态</span>
-                <select id="orderStatus" style="height:30px;color:black;width:250px;">
+                <span style="margin-left:20px;">当前状态</span>
+                <select id="deskStatus" style="height:30px;color:black;width:250px;">
                     <option value="">全部</option>
-                    <c:forEach items="${orderStatusList}" var="item">
+                    <c:forEach items="${deskStatusList}" var="item">
                         <option value="${item.id}">${item.name}</option>
                     </c:forEach>
                 </select>
@@ -82,6 +82,7 @@
 
     </div>
     <div style="margin-left:20px;margin-top:10px;">
+        <a href="${pageContext.request.contextPath}/admin/seat_info/add" class="btnGreen">新增</a>
 
     </div>
 
@@ -90,27 +91,18 @@
 
         <thead>
         <tr>
-            <th>订单编号</th>
-            <th>预约自习室号</th>
-            <th>预约座位号</th>
-            <th>预约日期</th>
-            <th>开始时间</th>
-            <th>结束时间</th>
-            <th>总时长（小时）</th>
-            <th>价格</th>
-            <th>总金额</th>
-            <th>预订用户</th>
-            <th>预约状态</th>
-            <th>预订时间</th>
+            <th>自习室号</th>
+            <th>座位号</th>
+            <th>当前状态</th>
             <th style="width:200px;">操作</th>
 
         </tr>
         </thead>
-        <tbody id="order_info_body">
+        <tbody id="desk_info_body">
 
         </tbody>
     </table>
-    <div id="order_info_bar" class="pagination" style="margin-top:20px;"></div>
+    <div id="desk_info_bar" class="pagination" style="margin-top:20px;"></div>
 
     <div class="action">
 
@@ -124,7 +116,7 @@
 
 
 <script type="text/javascript"
-        src="${pageContext.request.contextPath}/static/common/utils/listutils.js?v=4849"></script>
+        src="${pageContext.request.contextPath}/static/common/utils/listutils.js?v=9541"></script>
 
 
 <script type="text/javascript">
@@ -137,19 +129,19 @@
     });
 
     function ajaxList(page) {
-        var orderNo = $("#orderNo").val();
-        var orderStatus = $("#orderStatus").val();
+        var deskId = $("#deskId").val();
+        var deskStatus = $("#deskStatus").val();
 
 
         showLoading('${pageContext.request.contextPath}/static/common/loading.gif');
         $.ajax({
             type: 'get',
-            url: "${pageContext.request.contextPath}/admin/order_info/queryList",
+            url: "${pageContext.request.contextPath}/admin/seat_info/queryList",
             data: {
 
                 "page": page,
-                "orderNo": orderNo,
-                "orderStatus": orderStatus
+                "deskId": deskId,
+                "deskStatus": deskStatus
 
             },
             success: function (result) {
@@ -161,60 +153,33 @@
                 var html = '';
                 for (var i = 0; i < rows.length; i++) {
                     html += '<tr>';
-                    var orderNoVal = setNullToEmpty(rows[i].orderInfo.orderNo);
-                    html += '<td>' + orderNoVal + '</td>';
-                    var deskIdVal = setNullToEmpty(rows[i].deskIdStr);
-                    html += '<td>' + deskIdVal + '</td>';
-                    var seatIdVal = setNullToEmpty(rows[i].seatIdStr);
-                    html += '<td>' + seatIdVal + '</td>';
-                    var orderDateVal = setNullToEmpty(rows[i].orderInfo.orderDate);
-                    html += '<td>' + orderDateVal + '</td>';
-                    var startTimeVal = setNullToEmpty(rows[i].orderInfo.startTime);
-                    html += '<td>' + startTimeVal + ':00</td>';
-                    var endTimeVal = setNullToEmpty(rows[i].orderInfo.endTime);
-                    html += '<td>' + endTimeVal + ':00</td>';
-                    var totalHoursVal = setNullToEmpty(rows[i].orderInfo.totalHours);
-                    html += '<td>' + totalHoursVal + '</td>';
-                    var priceVal = setNullToEmpty(rows[i].orderInfo.price);
-                    html += '<td>' + priceVal + '</td>';
-                    var totalAmountVal = setNullToEmpty(rows[i].orderInfo.totalAmount);
-                    html += '<td>' + totalAmountVal + '</td>';
-                    var userIdVal = setNullToEmpty(rows[i].userIdStr);
-                    html += '<td>' + userIdVal + '</td>';
-                    var orderStatusVal = setNullToEmpty(rows[i].orderStatusStr);
-                    if (rows[i].orderInfo.orderStatus == '1') {
-                        orderStatusVal = '<span style="background-color:orange;color:white;padding:3px">' + orderStatusVal + '</span>'
+                    var deskId = setNullToEmpty(rows[i].seatInfo.deskId);
+                    html += '<td>' + deskId + '</td>';
+                    var deskNoVal = setNullToEmpty(rows[i].seatInfo.seatNo);
+                    html += '<td>' + deskNoVal + '</td>';
+
+                    var deskStatusVal = setNullToEmpty(rows[i].deskStatusStr);
+                    if (rows[i].seatInfo.deskStatus == '1') {
+                        deskStatusVal = '<span style="background-color:green;color:white;padding:3px">空闲</span>'
                     }
-                    if (rows[i].orderInfo.orderStatus == '2') {
-                        orderStatusVal = '<span style="background-color:red;color:white;padding:3px">' + orderStatusVal + '</span>'
+                    if (rows[i].seatInfo.deskStatus == '2') {
+                        deskStatusVal = '<span style="background-color:orange;color:white;padding:3px">已被占用</span>'
                     }
-                    if (rows[i].orderInfo.orderStatus == '3') {
-                        orderStatusVal = '<span style="background-color:blue;color:white;padding:3px">' + orderStatusVal + '</span>'
-                    }
-                    if (rows[i].orderInfo.orderStatus == '4') {
-                        orderStatusVal = '' + orderStatusVal + ''
-                    }
-                    html += '<td>' + orderStatusVal + '</td>';
-                    var createTimeVal = setNullToEmpty(rows[i].orderInfo.createTime);
-                    html += '<td>' + createTimeVal + '</td>';
+                    html += '<td>' + deskStatusVal + '</td>';
                     html += '<td>';
-                    /*if (rows[i].orderInfo.orderStatus == '1') {
-                        html += '<a href="javascript:void(0)" onclick="td2(this)" data-id="' + rows[i].orderInfo.id + '" act-type="1" class="btnPayment btnStyle">退订</a>';
-                    }*/
-
-                    html += '<a href="javascript:void(0)" onclick="td2(this)" data-id="' + rows[i].orderInfo.id + '" act-type="1" class="btnPayment btnStyle">退订</a>';
-
+                    html += '<a href="${pageContext.request.contextPath}/admin/seat_info/update?id=' + rows[i].seatInfo.id + '" class="btn btnStyle">修改</a>';
+                    html += '<a href="javascript:void(0)" onclick="del(this)" data-id="' + rows[i].seatInfo.id + '" class="btnPayment btnStyle">删除</a>';
                     html += '</td>';
                     html += '</tr>';
                 }
                 if (rows.length == 0) {
-                    html += '<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>无数据</td><td></td><td></td><td></td><td></td><td></td></tr>';
+                    html += '<tr><td></td><td>无数据</td><td></td></tr>';
                 }
-                $("#order_info_body").html(html);
+                $("#desk_info_body").html(html);
 
 
                 new myPagination({
-                    id: 'order_info_bar',
+                    id: 'desk_info_bar',
                     curPage: page, //初始页码
                     pageTotal: result.totalPage, //总页数
                     pageAmount: 10,  //每页多少条
@@ -231,13 +196,12 @@
         });
     }
 
-    function td2(e) {
-        var r = confirm("确认退订该数据？");
-        if (r == true) {
+    function del(e) {
+        if (window.confirm('你确定要删除该座位吗')) {
             var id = $(e).attr("data-id");
             $.ajax({
                 type: 'get',
-                url: "${pageContext.request.contextPath}/admin/order_info/td2",
+                url: "${pageContext.request.contextPath}/admin/seat_info/del",
                 data: {
                     "id": id
                 },
@@ -248,6 +212,9 @@
                     }
                 }
             });
+            return true;
+        } else {
+            return false;
         }
     }
 

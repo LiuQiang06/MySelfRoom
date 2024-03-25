@@ -47,6 +47,19 @@
             <div>
                 <table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
 
+                    <tr id="orderDateParentContent1">
+                        <td align="right">座位号</td>
+                        <td>
+                            <div style="width:720px;">
+                                <select style="width:500px;color:black" id="seatId">
+                                    <c:forEach var="item" items="${list}">
+                                        <option value="${item.id}">${item.seatNo }</option>
+                                    </c:forEach>
+                                </select>
+                                <span style="color:red">*必填</span>
+                            </div>
+                        </td>
+                    </tr>
 
                     <tr id="orderDateParentContent">
                         <td align="right">预约日期</td>
@@ -131,6 +144,7 @@
         var orderDate = $('#orderDate').val();
         var startTime = $('#startTime').val();
         var endTime = $('#endTime').val();
+        var seatId = $('#seatId').val();
 
         if (startTime != '') {
             if (isIntNum(startTime) == false) {
@@ -151,7 +165,8 @@
                 "deskId": "${data.deskId}",
                 "orderDate": orderDate,
                 "startTime": startTime,
-                "endTime": endTime
+                "endTime": endTime,
+                "seatId": seatId
             },
             success: function (result) {
                 if (result.code == 0) {

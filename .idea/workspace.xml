@@ -4,7 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08bff665-1763-49d8-aa78-a77bd3e397b9" name="Changes" comment="修改com.room.task.TaskServiceExcute类；使得更新桌子状态为：每秒更新一次" />
+    <list default="true" id="08bff665-1763-49d8-aa78-a77bd3e397b9" name="Changes" comment="README中添加项目url地址">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/room/controller/admin/ASeatInfoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/room/mapper/SeatInfoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/room/pojo/SeatInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/room/pojo/SeatInfoExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/room/service/SeatInfoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/room/service/impl/SeatInfoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/SeatInfoMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/seat_info/add_page.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/seat_info/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/seat_info/update_page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/75c1017c-9869-4b7b-81b3-998961a80813.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/75c1017c-9869-4b7b-81b3-998961a80813.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/room/config/AutoRunWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/room/config/AutoRunWeb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/room/controller/user/UOrderInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/room/controller/user/UOrderInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/room/pojo/OrderInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/room/pojo/OrderInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/room/service/impl/OrderInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/room/service/impl/OrderInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/room/service/impl/TaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/room/service/impl/TaskServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OrderInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrderInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/order_info/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/order_info/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/order_info/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/order_info/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/order_info/order_desk_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/order_info/order_desk_page.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,12 +70,18 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2blXiUXzpeGehuBIoCsfqbuuQWO" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Maven.MySelfRoom [clean].executor": "Run",
+    "Maven.MySelfRoom [org.apache.maven.plugins:maven-clean-plugin:2.6.1:clean].executor": "Run",
     "Maven.StudyRoomManagementSystem [clean].executor": "Run",
     "Maven.study_room_sys [clean].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
@@ -120,6 +150,9 @@
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\liuqiangSX5371\AppData\Roaming\Subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="08bff665-1763-49d8-aa78-a77bd3e397b9" name="Changes" comment="" />
@@ -199,7 +232,11 @@
       <workItem from="1710565969384" duration="2264000" />
       <workItem from="1710574466531" duration="1029000" />
       <workItem from="1710636787893" duration="362000" />
-      <workItem from="1710834969857" duration="121000" />
+      <workItem from="1710834969857" duration="814000" />
+      <workItem from="1710835794904" duration="5599000" />
+      <workItem from="1711336107042" duration="623000" />
+      <workItem from="1711336820985" duration="88000" />
+      <workItem from="1711337397567" duration="2717000" />
     </task>
     <task id="LOCAL-00001" summary="修改了部分前端页面">
       <option name="closed" value="true" />
@@ -233,7 +270,23 @@
       <option name="project" value="LOCAL" />
       <updated>1709802288350</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="论文放到resource目录下">
+      <option name="closed" value="true" />
+      <created>1710836060750</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710836060750</updated>
+    </task>
+    <task id="LOCAL-00006" summary="README中添加项目url地址">
+      <option name="closed" value="true" />
+      <created>1710836183368</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1710836183368</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,13 +316,16 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="修改了部分前端页面" />
     <MESSAGE value="调整格式" />
     <MESSAGE value="对页面进行了大幅度的调整" />
     <MESSAGE value="对页面进行了大幅度的调整，新添加退订功能" />
     <MESSAGE value="页面文字小调整；店铺--&gt;自习室" />
     <MESSAGE value="修改com.room.task.TaskServiceExcute类；使得更新桌子状态为：每秒更新一次" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改com.room.task.TaskServiceExcute类；使得更新桌子状态为：每秒更新一次" />
+    <MESSAGE value="论文放到resource目录下" />
+    <MESSAGE value="README中添加项目url地址" />
+    <option name="LAST_COMMIT_MESSAGE" value="README中添加项目url地址" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -5,6 +5,7 @@
     <id column="id" jdbcType="INTEGER" property="id" />
         <result column="order_no" property="orderNo" jdbcType="VARCHAR" />
   <result column="desk_id" property="deskId" jdbcType="INTEGER" />
+  <result column="seat_id" property="seatId" jdbcType="INTEGER" />
   <result column="order_date" property="orderDate" jdbcType="VARCHAR" />
   <result column="start_time" property="startTime" jdbcType="INTEGER" />
   <result column="end_time" property="endTime" jdbcType="INTEGER" />
@@ -75,7 +76,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-     id,order_no,desk_id,order_date,start_time,end_time,total_hours,price,total_amount,user_id,order_status,create_time
+     id,order_no,desk_id,seat_id,order_date,start_time,end_time,total_hours,price,total_amount,user_id,order_status,create_time
   </sql>
   <select id="selectByExample" parameterType="com.room.pojo.OrderInfoExample" resultMap="BaseResultMap">
     select
@@ -116,8 +117,8 @@
   SELECT LAST_INSERT_ID()
 </selectKey>
 
-      insert into order_info (order_no,desk_id,order_date,start_time,end_time,total_hours,price,total_amount,user_id,order_status,create_time)
-      values (	#{id,jdbcType=INTEGER},	#{orderNo,jdbcType=VARCHAR},	#{deskId,jdbcType=INTEGER},	#{orderDate,jdbcType=VARCHAR},	#{startTime,jdbcType=INTEGER},	#{endTime,jdbcType=INTEGER},	#{totalHours,jdbcType=INTEGER},	#{price,jdbcType=DOUBLE},	#{totalAmount,jdbcType=DOUBLE},	#{userId,jdbcType=INTEGER},	#{orderStatus,jdbcType=INTEGER},	#{createTime,jdbcType=VARCHAR})
+      insert into order_info (order_no,desk_id,seat_idorder_date,start_time,end_time,total_hours,price,total_amount,user_id,order_status,create_time)
+      values (	#{id,jdbcType=INTEGER},	#{orderNo,jdbcType=VARCHAR},	#{deskId,jdbcType=INTEGER},	#{seatId,jdbcType=INTEGER},#{orderDate,jdbcType=VARCHAR},	#{startTime,jdbcType=INTEGER},	#{endTime,jdbcType=INTEGER},	#{totalHours,jdbcType=INTEGER},	#{price,jdbcType=DOUBLE},	#{totalAmount,jdbcType=DOUBLE},	#{userId,jdbcType=INTEGER},	#{orderStatus,jdbcType=INTEGER},	#{createTime,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.room.pojo.OrderInfo">
    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
@@ -134,6 +135,9 @@
  </if>
 <if test="deskId != null" >
 	  desk_id,
+ </if>
+        <if test="seatId != null" >
+	  seat_id,
  </if>
 <if test="orderDate != null" >
 	  order_date,
@@ -173,6 +177,9 @@
 	 </if>
   <if test="deskId != null" >
 	 #{deskId,jdbcType=INTEGER},
+	 </if>
+        <if test="seatId != null" >
+	 #{seatId,jdbcType=INTEGER},
 	 </if>
   <if test="orderDate != null" >
 	 #{orderDate,jdbcType=VARCHAR},
@@ -219,6 +226,9 @@
  <if test="record.deskId != null" >
 	 desk_id = #{record.deskId,jdbcType=INTEGER},
 </if>
+         <if test="record.seatId != null" >
+	 seat_id = #{record.seatId,jdbcType=INTEGER},
+</if>
  <if test="record.orderDate != null" >
 	 order_date = #{record.orderDate,jdbcType=VARCHAR},
 </if>
@@ -255,7 +265,7 @@
   <update id="updateByExample" parameterType="map">
     update order_info
     set 
-    				order_no = #{record.orderNo,jdbcType=VARCHAR},	desk_id = #{record.deskId,jdbcType=INTEGER},	order_date = #{record.orderDate,jdbcType=VARCHAR},	start_time = #{record.startTime,jdbcType=INTEGER},	end_time = #{record.endTime,jdbcType=INTEGER},	total_hours = #{record.totalHours,jdbcType=INTEGER},	price = #{record.price,jdbcType=DOUBLE},	total_amount = #{record.totalAmount,jdbcType=DOUBLE},	user_id = #{record.userId,jdbcType=INTEGER},	order_status = #{record.orderStatus,jdbcType=INTEGER},	create_time = #{record.createTime,jdbcType=VARCHAR}
+    				order_no = #{record.orderNo,jdbcType=VARCHAR},	desk_id = #{record.deskId,jdbcType=INTEGER},seat_id = #{record.seatId,jdbcType=INTEGER},	order_date = #{record.orderDate,jdbcType=VARCHAR},	start_time = #{record.startTime,jdbcType=INTEGER},	end_time = #{record.endTime,jdbcType=INTEGER},	total_hours = #{record.totalHours,jdbcType=INTEGER},	price = #{record.price,jdbcType=DOUBLE},	total_amount = #{record.totalAmount,jdbcType=DOUBLE},	user_id = #{record.userId,jdbcType=INTEGER},	order_status = #{record.orderStatus,jdbcType=INTEGER},	create_time = #{record.createTime,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -268,6 +278,9 @@
 </if>
  <if test="deskId != null" >
 	 desk_id = #{deskId,jdbcType=INTEGER},
+</if>
+        <if test="seatId != null" >
+	 seat_id = #{seatId,jdbcType=INTEGER},
 </if>
  <if test="orderDate != null" >
 	 order_date = #{orderDate,jdbcType=VARCHAR},
@@ -303,7 +316,7 @@
   <update id="updateByPrimaryKey" parameterType="com.room.pojo.OrderInfo">
     update order_info
     set 
-     			order_no = #{orderNo,jdbcType=VARCHAR},	desk_id = #{deskId,jdbcType=INTEGER},	order_date = #{orderDate,jdbcType=VARCHAR},	start_time = #{startTime,jdbcType=INTEGER},	end_time = #{endTime,jdbcType=INTEGER},	total_hours = #{totalHours,jdbcType=INTEGER},	price = #{price,jdbcType=DOUBLE},	total_amount = #{totalAmount,jdbcType=DOUBLE},	user_id = #{userId,jdbcType=INTEGER},	order_status = #{orderStatus,jdbcType=INTEGER},	create_time = #{createTime,jdbcType=VARCHAR}
+     			order_no = #{orderNo,jdbcType=VARCHAR},	desk_id = #{deskId,jdbcType=INTEGER},seat_id = #{seatId,jdbcType=INTEGER},	order_date = #{orderDate,jdbcType=VARCHAR},	start_time = #{startTime,jdbcType=INTEGER},	end_time = #{endTime,jdbcType=INTEGER},	total_hours = #{totalHours,jdbcType=INTEGER},	price = #{price,jdbcType=DOUBLE},	total_amount = #{totalAmount,jdbcType=DOUBLE},	user_id = #{userId,jdbcType=INTEGER},	order_status = #{orderStatus,jdbcType=INTEGER},	create_time = #{createTime,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   

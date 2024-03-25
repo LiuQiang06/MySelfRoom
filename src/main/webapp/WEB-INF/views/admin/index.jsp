@@ -79,6 +79,17 @@
                 </li>
 
             </ul>
+                <ul>
+
+                    <li>
+
+                        <a data-name="座位管理" data-href="${pageContext.request.contextPath}/admin/seat_info"
+                           href="javascript:void(0)" onclick="goPage(this)"
+                           style="text-align:center"><em>座位管理</em></a>
+
+                    </li>
+
+                </ul>
             <%--<ul>
                 <li style="background-color:#dddddd"><a href="javascript:void(0)"><em>订单管理 </em></a></li>
             </ul>--%>

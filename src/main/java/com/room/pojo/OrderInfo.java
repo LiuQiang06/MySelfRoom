@@ -4,6 +4,7 @@ public class OrderInfo {
     private Integer id; //ID
     private String orderNo; //订单编号
     private Integer deskId; //预约桌号
+    private Integer seatId; //预约桌号
     private String orderDate; //预约日期
     private Integer startTime; //开始时间
     private Integer endTime; //结束时间
@@ -13,6 +14,14 @@ public class OrderInfo {
     private Integer userId; //预订用户
     private Integer orderStatus; //预约状态
     private String createTime; //预订时间
+
+    public Integer getSeatId() {
+        return seatId;
+    }
+
+    public void setSeatId(Integer seatId) {
+        this.seatId = seatId;
+    }
 
     public Integer getId() {
         return id;

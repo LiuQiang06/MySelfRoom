@@ -1,14 +1,8 @@
 package com.room.controller.user;
 
 import com.room.controller.LoginModel;
-import com.room.mapper.DeskInfoMapper;
-import com.room.mapper.OrderInfoMapper;
-import com.room.mapper.SysSettingInfoMapper;
-import com.room.mapper.UserInfoMapper;
-import com.room.pojo.OrderInfo;
-import com.room.pojo.SysSettingInfo;
-import com.room.pojo.SysSettingInfoExample;
-import com.room.pojo.UserInfo;
+import com.room.mapper.*;
+import com.room.pojo.*;
 import com.room.service.OrderInfoService;
 import com.room.util.CommonVal;
 import com.room.util.DataListUtils;
@@ -37,6 +31,8 @@ public class UOrderInfoController {
     DeskInfoMapper deskInfoMapper;
     @Autowired
     OrderInfoMapper orderInfoMapper;
+    @Autowired
+    SeatInfoMapper seatInfoMapper;
     @Autowired
     SysSettingInfoMapper sysSettingInfoMapper;
 
@@ -109,7 +105,10 @@ public class UOrderInfoController {
                 .getAttribute(CommonVal.sessionName); //从session中获取当前登录账号
         getList(modelMap, login); //获取前台需要用到的数据列表并返回给前台
         modelMap.addAttribute("data", model);
-
+        Integer deskId = model.getDeskId();
+        DeskInfo deskInfo = deskInfoMapper.selectByPrimaryKey(deskId);
+        List<SeatInfo> list = seatInfoMapper.list(deskInfo.getDeskNo());
+        modelMap.addAttribute("list", list);
         return "user/order_info/order_desk_page";
     }
 
@@ -175,6 +174,10 @@ public class UOrderInfoController {
 
         model.setOrderStatus(2);
         orderInfoMapper.updateByPrimaryKey(model);
+        Integer seatId = model.getSeatId();
+        SeatInfo seatInfo = seatInfoMapper.selectByPrimaryKey(seatId);
+        seatInfo.setDeskStatus(1);
+        seatInfoMapper.updateByPrimaryKey(seatInfo);
 
         UserInfo user = userInfoMapper.selectByPrimaryKey(model.getUserId());
         user.setUserAccount(user.getUserAccount() + model.getTotalAmount());

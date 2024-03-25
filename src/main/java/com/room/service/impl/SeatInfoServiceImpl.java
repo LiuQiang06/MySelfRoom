@@ -32,6 +32,10 @@ public class SeatInfoServiceImpl implements SeatInfoService {
         if ((model.getDeskId() == null) || model.getSeatNo().equals("")) {
             return "座位号和自习室号为必填属性";
         }
+        Integer count = seatInfoMapper.count(model.getDeskId(), model.getSeatNo());
+        if (count > 0){
+            return "座位不能重复";
+        }
 
         model.setDeskStatus(1); //默认空闲,
         seatInfoMapper.insertSelective(model); //插入数据
@@ -48,6 +52,12 @@ public class SeatInfoServiceImpl implements SeatInfoService {
 
         if ((model.getDeskId() == null) || model.getSeatNo().equals("")) {
             return "座位号和自习室号为必填属性";
+        }
+        if (!preModel.getSeatNo().equals(model.getSeatNo())) {
+            Integer count = seatInfoMapper.count(model.getDeskId(), model.getSeatNo());
+            if (count > 0){
+                return "座位不能重复";
+            }
         }
 
         preModel.setDeskId(model.getDeskId());

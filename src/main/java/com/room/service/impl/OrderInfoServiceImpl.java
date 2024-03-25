@@ -17,7 +17,7 @@ import java.util.*;
 public class OrderInfoServiceImpl implements OrderInfoService {
     SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd");
-    SimpleDateFormat sdf3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    SimpleDateFormat sdf3 = new SimpleDateFormat("yyyyMMddHHmmss");
     @Autowired
     OrderInfoMapper orderInfoMapper;
     @Autowired

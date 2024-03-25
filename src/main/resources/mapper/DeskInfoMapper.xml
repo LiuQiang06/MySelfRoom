@@ -193,5 +193,9 @@
             desk_status = #{deskStatus,jdbcType=INTEGER}
         where id = #{id,jdbcType=INTEGER}
     </update>
+    <select id="selectByDeskNo" resultType="com.room.pojo.DeskInfo">
+        select * from desk_info
+        where desk_no = #{deskNo}
+    </select>
 
 </mapper>

@@ -51,7 +51,7 @@
                     <tr id="deskNoParentContent">
                         <td align="right">自习室号</td>
                         <td>
-                            <div style="width:720px;"><input type="text" class="inpMain"
+                            <div style="width:720px;"><input readonly type="text" class="inpMain"
                                                              style="color:black;width:500px;" placeholder="请输入自习室号"
                                                              value="${data.deskId}" id="deskId"/> <span style="color:red">*必填</span>
                             </div>

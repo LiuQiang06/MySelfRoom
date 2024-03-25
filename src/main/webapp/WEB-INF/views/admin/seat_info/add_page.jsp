@@ -51,9 +51,13 @@
                     <tr id="deskNoParentContent">
                         <td align="right">自习室号</td>
                         <td>
-                            <div style="width:720px;"><input type="text" class="inpMain"
-                                                             style="color:black;width:500px;" placeholder="请输入自习室号"
-                                                             id="deskId"/> <span style="color:red">*必填</span>
+                            <div style="width:720px;">
+                                <select style="width:500px;color:black" id="deskId">
+                                    <c:forEach var="item" items="${deskInfos}">
+                                        <option value="${item.deskNo}">${item.deskNo }</option>
+                                    </c:forEach>
+                                </select>
+                                <span style="color:red">*必填</span>
                             </div>
                         </td>
                     </tr>

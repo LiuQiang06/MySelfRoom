@@ -2,8 +2,11 @@ package com.room.controller.admin;
 
 import com.room.controller.LoginModel;
 import com.room.mapper.AdminInfoMapper;
+import com.room.mapper.DeskInfoMapper;
 import com.room.mapper.SeatInfoMapper;
 import com.room.pojo.AdminInfo;
+import com.room.pojo.DeskInfo;
+import com.room.pojo.DeskInfoExample;
 import com.room.pojo.SeatInfo;
 import com.room.service.SeatInfoService;
 import com.room.util.CommonVal;
@@ -17,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -31,6 +35,9 @@ public class ASeatInfoController {
     AdminInfoMapper adminInfoMapper;
     @Autowired
     SeatInfoMapper seatInfoMapper;
+
+    @Autowired
+    DeskInfoMapper deskInfoMapper;
 
     public void getList(ModelMap modelMap, LoginModel login) { //获取数据列表并返回给前台
         modelMap.addAttribute("deskStatusList",
@@ -75,6 +82,8 @@ public class ASeatInfoController {
                 .getAttribute(CommonVal.sessionName); //从session中获取当前登录账号
         getList(modelMap, login); //获取前台需要用到的数据列表并返回给前台
         modelMap.addAttribute("data", model);
+        List<DeskInfo> deskInfos = deskInfoMapper.selectByExample(new DeskInfoExample());
+        modelMap.addAttribute("deskInfos", deskInfos);
 
         return "admin/seat_info/add_page";
     }

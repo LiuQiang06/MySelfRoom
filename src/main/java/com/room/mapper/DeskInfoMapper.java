@@ -34,5 +34,7 @@ public interface DeskInfoMapper {
     int updateByPrimaryKeySelective(DeskInfo record);
 
     int updateByPrimaryKey(DeskInfo record);
+
+    DeskInfo selectByDeskNo(String deskNo);
 }
 

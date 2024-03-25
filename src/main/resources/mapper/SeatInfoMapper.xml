@@ -215,4 +215,17 @@
         where desk_id = #{deskNo,jdbcType=VARCHAR} and desk_status = 1
     </select>
 
+    <select id="count" parameterType="java.lang.String" resultType="java.lang.Integer">
+        select count(1)
+        from seat_info
+        where  desk_id = #{deskId,jdbcType=VARCHAR} and seat_no = #{seatNo,jdbcType=VARCHAR}
+    </select>
+    <update id="updateSeatStatus" parameterType="java.lang.Integer">
+        update seat_info
+        set
+            desk_status = 1
+        where
+            id  = #{seatId,javaType=Integer}
+    </update>
+
 </mapper>

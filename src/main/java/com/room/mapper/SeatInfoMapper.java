@@ -35,5 +35,9 @@ public interface SeatInfoMapper {
     int updateByPrimaryKey(SeatInfo record);
 
     List<SeatInfo>  list(String deskNo);
+
+    Integer count(@Param("deskId")String deskId, @Param("seatNo")String seatNo);
+
+    void updateSeatStatus( Integer seatId);
 }
 

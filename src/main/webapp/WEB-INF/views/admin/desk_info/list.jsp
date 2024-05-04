@@ -57,7 +57,7 @@
             <p style="display:inline-block;margin-top:30px">
                 <span style="margin-left:20px;">自习室号</span>
                 <input type="text" class="inpMain" style="color:black;width:250px;"
-                       placeholder="请输入自习室名称进行查询" id="deskNo"/>
+                       placeholder="请输入自习室号进行查询" id="deskNo"/>
             </p>
         </div>
 
@@ -193,7 +193,7 @@
     }
 
     function del(e) {
-        if (window.confirm('你确定要删除该桌子吗')) {
+        if (window.confirm('你确定要删除自习室吗')) {
             var id = $(e).attr("data-id");
             $.ajax({
                 type: 'get',

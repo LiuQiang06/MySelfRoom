@@ -7,23 +7,16 @@
     <list default="true" id="08bff665-1763-49d8-aa78-a77bd3e397b9" name="Changes" comment="添加预约自习室中座位功能，仍有部分bug">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/75c1017c-9869-4b7b-81b3-998961a80813.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/75c1017c-9869-4b7b-81b3-998961a80813/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/75c1017c-9869-4b7b-81b3-998961a80813/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/75c1017c-9869-4b7b-81b3-998961a80813/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/75c1017c-9869-4b7b-81b3-998961a80813/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/room/controller/admin/ASeatInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/room/controller/admin/ASeatInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/room/mapper/DeskInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/room/mapper/DeskInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/room/mapper/SeatInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/room/mapper/SeatInfoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/room/config/AutoRunWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/room/config/AutoRunWeb.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/room/service/impl/DeskInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/room/service/impl/DeskInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/room/service/impl/OrderInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/room/service/impl/OrderInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/room/service/impl/SeatInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/room/service/impl/SeatInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/room/service/impl/TaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/room/service/impl/TaskServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/DeskInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/DeskInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/AdhocOrderGatherMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/AdhocOrderGatherMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/AdminInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/AdminInfoMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SeatInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SeatInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/seat_info/add_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/seat_info/add_page.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/seat_info/update_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/seat_info/update_page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/论文/刘强-基于Spring Boot智慧自习室管理系统的设计与实现.doc" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/论文/刘强-基于Spring Boot智慧自习室管理系统的设计与实现.doc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/desk_info/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/desk_info/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/deposit_log/deposit_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/deposit_log/deposit_page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/order_info/order_desk_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/order_info/order_desk_page.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +25,13 @@
   </component>
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -48,13 +48,14 @@
     &quot;assignee&quot;: &quot;LiuQiang06&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="ed1e45e3-9843-4431-bec8-1922c638c29a" />
-        <option name="url" value="https://github.com/LiuQiang06/StudyRoomManagementSystem.git" />
-      </UrlAndAccount>
-    </option>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/LiuQiang06/MySelfRoom.git&quot;,
+    &quot;accountId&quot;: &quot;ebeda8d5-6a0c-4d25-9298-d7aa29f0d4f1&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/resources/selfroom.sql" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -62,7 +63,10 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="customMavenHome" value="$PROJECT_DIR$/../../../maven/apache-maven-3.6.0" />
+        <option name="localRepository" value="D:\LiuQiang\maven\Repository" />
+        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
+        <option name="userSettingsFile" value="D:\LiuQiang\maven\apache-maven-3.6.0\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -83,6 +87,8 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.lianxi.executor&quot;: &quot;Run&quot;,
+    &quot;Application.test.executor&quot;: &quot;Run&quot;,
     &quot;Maven.MySelfRoom [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.MySelfRoom [org.apache.maven.plugins:maven-clean-plugin:2.6.1:clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.StudyRoomManagementSystem [clean].executor&quot;: &quot;Run&quot;,
@@ -100,16 +106,16 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/IdeaProjects/MySelfRoom&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/LiuQiang/IdeaProject/degisn/MySelfRoom/src/main/webapp/static/login/img&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.26666668&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;3d3719465f216191d57891bb160c58d5&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -122,6 +128,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\LiuQiang\IdeaProject\degisn\MySelfRoom\src\main\webapp\static\login\img" />
+      <recent name="D:\LiuQiang\IdeaProject\degisn\MySelfRoom\src\main\resources\论文" />
       <recent name="D:\IdeaProjects\StudyRoomManagementSystem\src\main\resources" />
       <recent name="D:\IdeaProjects\StudyRoomManagementSystem\src\main\webapp\static\login\img" />
     </key>
@@ -148,7 +156,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-1.8.0_402-corretto-1.8.0_402-f644763e9732-af3fa2b8" />
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
       </set>
     </attachedChunks>
   </component>
@@ -248,6 +257,73 @@
       <workItem from="1711355264566" duration="951000" />
       <workItem from="1711358168408" duration="320000" />
       <workItem from="1711360081647" duration="646000" />
+      <workItem from="1711367215427" duration="503000" />
+      <workItem from="1711367870997" duration="6000" />
+      <workItem from="1711367895284" duration="48000" />
+      <workItem from="1711367958920" duration="57000" />
+      <workItem from="1711371171912" duration="1017000" />
+      <workItem from="1711632565633" duration="40000" />
+      <workItem from="1711694762570" duration="700000" />
+      <workItem from="1711717214344" duration="127000" />
+      <workItem from="1712034772965" duration="59000" />
+      <workItem from="1712034856372" duration="214000" />
+      <workItem from="1712124341077" duration="34000" />
+      <workItem from="1712485481017" duration="60000" />
+      <workItem from="1712486817334" duration="674000" />
+      <workItem from="1712487511365" duration="402000" />
+      <workItem from="1712540627555" duration="310000" />
+      <workItem from="1712541005451" duration="985000" />
+      <workItem from="1712542391498" duration="1414000" />
+      <workItem from="1712546775167" duration="120000" />
+      <workItem from="1712577508671" duration="157000" />
+      <workItem from="1712581498435" duration="2984000" />
+      <workItem from="1712658196544" duration="154000" />
+      <workItem from="1712978999591" duration="71000" />
+      <workItem from="1713186405817" duration="20000" />
+      <workItem from="1713585292398" duration="7206000" />
+      <workItem from="1713705688439" duration="413000" />
+      <workItem from="1714015414833" duration="37000" />
+      <workItem from="1714052324755" duration="627000" />
+      <workItem from="1714055011210" duration="500000" />
+      <workItem from="1714226433175" duration="47000" />
+      <workItem from="1714226495639" duration="34000" />
+      <workItem from="1714294019316" duration="161000" />
+      <workItem from="1714294435407" duration="116000" />
+      <workItem from="1714905070288" duration="991000" />
+      <workItem from="1714907557416" duration="174000" />
+      <workItem from="1714907747883" duration="60000" />
+      <workItem from="1714982803710" duration="278000" />
+      <workItem from="1714999195584" duration="128000" />
+      <workItem from="1715000475189" duration="111000" />
+      <workItem from="1715001950496" duration="183000" />
+      <workItem from="1715002341145" duration="2469000" />
+      <workItem from="1715045681554" duration="247000" />
+      <workItem from="1715066392705" duration="1145000" />
+      <workItem from="1715132770092" duration="748000" />
+      <workItem from="1715216156552" duration="2278000" />
+      <workItem from="1715220140159" duration="244000" />
+      <workItem from="1715220510517" duration="324000" />
+      <workItem from="1715226540998" duration="157000" />
+      <workItem from="1715253041765" duration="1583000" />
+      <workItem from="1715259570290" duration="2002000" />
+      <workItem from="1715419439620" duration="186000" />
+      <workItem from="1715419648103" duration="293000" />
+      <workItem from="1715472920333" duration="979000" />
+      <workItem from="1715495234300" duration="1261000" />
+      <workItem from="1715565307089" duration="538000" />
+      <workItem from="1715566266055" duration="1335000" />
+      <workItem from="1715579075185" duration="244000" />
+      <workItem from="1715580072644" duration="4873000" />
+      <workItem from="1715749046302" duration="21000" />
+      <workItem from="1715848313890" duration="107000" />
+      <workItem from="1715848435298" duration="72000" />
+      <workItem from="1715848613618" duration="9000" />
+      <workItem from="1715848635243" duration="71000" />
+      <workItem from="1715848717300" duration="14000" />
+      <workItem from="1715848743963" duration="208000" />
+      <workItem from="1715850674190" duration="16000" />
+      <workItem from="1715946132410" duration="717000" />
+      <workItem from="1716257122161" duration="1117000" />
     </task>
     <task id="LOCAL-00001" summary="修改了部分前端页面">
       <option name="closed" value="true" />

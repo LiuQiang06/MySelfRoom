@@ -58,6 +58,10 @@ public class DeskInfoServiceImpl implements DeskInfoService {
         if ((model.getDeskNo() == null) || model.getDeskNo().equals("")) {
             return "桌号为必填属性";
         }
+        DeskInfo deskInfo = deskInfoMapper.selectByDeskNo(model.getDeskNo());
+        if(Objects.nonNull(deskInfo)){
+            return "自习室名称重复";
+        }
 
         preModel.setDeskNo(model.getDeskNo());
         deskInfoMapper.updateByPrimaryKey(preModel); //更新数据

@@ -69,21 +69,21 @@
      id,login_name,password
   </sql>
   <select id="selectByExample" parameterType="com.room.pojo.AdminInfoExample" resultMap="BaseResultMap">
-    select
-    <if test="distinct">
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from admin_info
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
-     <if test="startRow >= 0 and pageRows > 0">
-  limit ${startRow},${pageRows}
-  </if>
+      select
+      <if test="distinct">
+          distinct
+      </if>
+      <include refid="Base_Column_List"/>
+      from admin_info
+      <if test="_parameter != null">
+          <include refid="Example_Where_Clause"/>
+      </if>
+      <if test="orderByClause != null">
+          order by ${orderByClause}
+      </if>
+      <if test="startRow >= 0 and pageRows > 0">
+          limit ${startRow},${pageRows}
+      </if>
 
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
@@ -111,35 +111,35 @@
       values (	#{id,jdbcType=INTEGER},	#{loginName,jdbcType=VARCHAR},	#{password,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.room.pojo.AdminInfo">
-   <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
-  SELECT LAST_INSERT_ID()
-</selectKey>
+      <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+          SELECT LAST_INSERT_ID()
+      </selectKey>
 
-    insert into admin_info
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null" >
-	  id,
- </if>
-<if test="loginName != null" >
-	  login_name,
- </if>
-<if test="password != null" >
-	  password
- </if>
+      insert into admin_info
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+          <if test="id != null">
+              id,
+          </if>
+          <if test="loginName != null">
+              login_name,
+          </if>
+          <if test="password != null">
+              password
+          </if>
 
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-         <if test="id != null" >
-	 #{id,jdbcType=INTEGER},
-	 </if>
-  <if test="loginName != null" >
-	 #{loginName,jdbcType=VARCHAR},
-	 </if>
-  <if test="password != null" >
-	 #{password,jdbcType=VARCHAR},
-	 </if>
+      </trim>
+      <trim prefix="values (" suffix=")" suffixOverrides=",">
+          <if test="id != null">
+              #{id,jdbcType=INTEGER},
+          </if>
+          <if test="loginName != null">
+              #{loginName,jdbcType=VARCHAR},
+          </if>
+          <if test="password != null">
+              #{password,jdbcType=VARCHAR},
+          </if>
 
-    </trim>
+      </trim>
   </insert>
   <select id="countByExample" parameterType="com.room.pojo.AdminInfoExample" resultType="java.lang.Long">
     select count(*) from admin_info

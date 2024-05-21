@@ -6,7 +6,7 @@
 <head>
     <c:set var="uri" value="${pageContext.request.contextPath}"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>充值<%---充值记录 <--%>/title>
+    <title>充值-充值记录 </title>
     <meta name="Copyright" content="Douco Design."/>
     <link href="${pageContext.request.contextPath}/static/admin/css/public.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="${pageContext.request.contextPath}/static/admin/js/jquery.min.js"></script>
@@ -41,7 +41,7 @@
 
 <div id="mMain">
     <div class="mainBox" style="height:auto!important;height:550px;min-height:550px;">
-        <h3>充值<%---充值记录--%></h3>
+        <h3>充值-充值记录</h3>
 
         <div class="system">
             <div>

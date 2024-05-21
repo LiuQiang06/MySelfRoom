@@ -47,6 +47,26 @@
             <div>
                 <table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
 
+                    <!-- 显示第一个自习室号的行 -->
+                    <tr id="orderDateParentContent2">
+                        <td align="right">自习室号</td>
+                        <td>
+                            <div style="width:720px;">
+                                <!-- 检查列表是否不为空，然后显示第一个自习室号 -->
+                                <c:if test="${not empty list}">
+                                    <p style="display:inline-block; width:500px; margin-right:10px;">
+                                            ${list[0].deskId}
+                                    </p>
+                                </c:if>
+                                <!-- 如果列表为空，可以显示一个占位符或提示信息 -->
+                                <c:if test="${empty list}">
+                                    <p style="display:inline-block; width:500px; margin-right:10px;">
+                                        （没有自习室信息）
+                                    </p>
+                                </c:if>
+                            </div>
+                        </td>
+                    </tr>
                     <tr id="orderDateParentContent1">
                         <td align="right">座位号</td>
                         <td>

@@ -193,7 +193,7 @@
     }
 
     function del(e) {
-        if (window.confirm('你确定要删除自习室吗')) {
+        if (window.confirm('你确定要删除该桌子吗')) {
             var id = $(e).attr("data-id");
             $.ajax({
                 type: 'get',
